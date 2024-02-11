@@ -1,0 +1,64 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("~/routes/img/page_background.jpg"); 
+    height: 100%;
+ 
+}
+/* Navbar.css */
+
+nav {
+    background-color: none;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+  }
+  
+  li {
+    margin-left: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+/* styles.css */
+.headings {
+    position: relative; /* Set the position to relative or absolute */
+    top: 200px; /* Adjust the top value to move the div vertically */
+    left: 50px; /* Adjust the left value to move the div horizontally */
+    /* You can also use right or bottom properties if needed */
+    /* right: 20px;
+       bottom: 50px; */
+  }  
+.buttons {
+    position: relative; /* Set the position to relative or absolute */
+    top: 400px; /* Adjust the top value to move the div vertically */
+    left: 50px;
+    /* display: flex;
+    justify-content: space-between;
+    gap: 10px; */
+
+}
+/* .custom-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  
+
+h1{  
+    color:white;
+}
+h2{
+    color: white;
+}
