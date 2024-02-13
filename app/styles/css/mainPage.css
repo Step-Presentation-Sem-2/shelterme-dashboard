@@ -1,13 +1,28 @@
 body{
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("~/routes/img/page_background.jpg"); 
+    background-image: url("app/img/page_background.jpg"); 
     height: 100%;
  
 }
+
+.file_upload {
+  margin: auto;
+  max-width: 30%;
+  max-height: 10%;
+  background-color: whitesmoke;
+}
+.file_upload_icon_img {
+  width: 20%;
+  margin: auto  ;
+}
+.file_upload_text {
+  margin-left: 80px;
+
+}
 /* Navbar.css */
 
-nav {
+/* nav {
     background-color: none;
     padding: 10px;
   }
@@ -26,7 +41,7 @@ nav {
   a {
     text-decoration: none;
     color: white;
-  }
+  } */
   
 /* styles.css */
 .headings {
@@ -62,3 +77,28 @@ h1{
 h2{
     color: white;
 }
+
+/* styles.css */
+
+.navbar {
+    background-color: none;
+    padding: 10px;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Move items to the right */
+  }
+  
+  .nav-list li {
+    margin-right: 20px; /* Adjust the spacing between list items */
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: white;
+  }
+  

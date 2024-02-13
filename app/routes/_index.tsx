@@ -13,15 +13,19 @@ export const links: LinksFunction = () => [
 export default function Index() {
   let navigate = useNavigate()
   return <div>
-    <div className="nav">
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+    <nav className="navbar">
+    <div className="container">
+    <a className="navbar-brand" href="#">
+      <img src="app\img\icon.jpg" alt="" width="30" height="24"/>
+    </a>
+    </div>
+      <ul className="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-    </div>
+
     <div className="headings">
     <h1>AuthentiScan</h1>
     <h2>Diving Deep:Detecting the Digital Doppelganger</h2>
@@ -33,3 +37,6 @@ export default function Index() {
   </div>
 
 }
+
+
+
