@@ -9,10 +9,3 @@ runtime nodejs18.x
 # profile default
 # region us-west-1
 # timeout 30
-
-
-@plugins
-plugin-remix
-  src plugin-remix.js
-
-@static
