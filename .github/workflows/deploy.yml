@@ -3,7 +3,6 @@ name: 🚀 Deploy
 on:
   push:
     branches:
-      - main
       - dev
       - master
   pull_request:
