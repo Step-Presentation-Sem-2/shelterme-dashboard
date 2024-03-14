@@ -3,7 +3,6 @@ name: 🚀 Deploy
 on:
   push:
     branches:
-      - joel/api-layer
       - dev
       - master
   pull_request:
@@ -83,7 +82,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: 🚀 Production Deploy
-        if: github.ref == 'refs/heads/joel/api-layer'
+        if: github.ref == 'refs/heads/master'
         run: arc deploy --production --prune
         env:
           CI: true
