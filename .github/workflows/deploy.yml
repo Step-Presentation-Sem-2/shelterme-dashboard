@@ -59,7 +59,7 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_DEPLOYMENT_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-west-2'
@@ -76,7 +76,7 @@ jobs:
 
       - name: Log S3 Deployment URL
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_DEPLOYMENT_BUCKET_NAME }}
           AWS_REGION: 'us-west-2'
         run: |
           echo "Deployment URL: http://$AWS_S3_BUCKET.s3-website-$AWS_REGION.amazonaws.com"
