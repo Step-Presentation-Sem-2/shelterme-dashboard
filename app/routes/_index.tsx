@@ -1,3 +1,4 @@
+import { useNavigate } from '@remix-run/react';
 import type { MetaFunction } from '@remix-run/node';
 import { Col, Row, Image, Typography, Button } from 'antd';
 import { WithNavigation } from '../components/WithNavigation';
@@ -13,6 +14,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const navigate = useNavigate();
   return (
     <WithNavigation>
       <Row gutter={12} justify='center'>
@@ -31,7 +33,7 @@ export default function Index() {
           </Title>
           <Row gutter={24}>
             <Col span={12}>
-              <Button>Get Started</Button>
+              <Button onClick={() => navigate('/scan')}>Get Started</Button>
             </Col>
             <Col span={12}>
               <Button>Read More</Button>
