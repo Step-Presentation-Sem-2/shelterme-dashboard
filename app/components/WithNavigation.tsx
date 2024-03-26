@@ -5,7 +5,8 @@ import { Menu } from 'antd';
 import * as antIcons from '@ant-design/icons';
 import logo from '../images/logo.svg';
 
-const { HomeOutlined, QuestionCircleOutlined, ContactsOutlined } = antIcons;
+const { HomeOutlined, QuestionCircleOutlined, ContactsOutlined, UserOutlined } =
+  antIcons;
 
 export function WithNavigation({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
@@ -13,22 +14,24 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
 
   const onClick: MenuProps['onClick'] = (e) => {
     setCurrent(e.key);
-    navigate(e.key);
+    navigate(e.key, { relative: 'route' });
   };
 
   return (
     <>
       <Menu onClick={onClick} selectedKeys={[current]} mode='horizontal'>
-        <Menu.ItemGroup>
+        <Menu.ItemGroup style={{ display: 'flex', alignItems: 'center' }}>
           <Menu.Item key='brand'>
-            <img
-              className='ant-menu-item'
-              src={logo}
-              alt='authentiscan-logo'
-              width={65}
-              height={65}
-            />
-            Authentiscan
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                className='ant-menu-item'
+                src={logo}
+                alt='authentiscan-logo'
+                width={75}
+                height={75}
+              />
+              Authentiscan
+            </span>
           </Menu.Item>
         </Menu.ItemGroup>
 
@@ -46,6 +49,11 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
           <Menu.Item key='contact'>
             <ContactsOutlined />
             Contact
+          </Menu.Item>
+
+          <Menu.Item key='team'>
+            <UserOutlined />
+            Team
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu>

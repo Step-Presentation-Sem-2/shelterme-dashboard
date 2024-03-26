@@ -22,6 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           backgroundImage: `url(${pageBackground})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
+          marginTop: 0,
         }}
       >
         {children}
