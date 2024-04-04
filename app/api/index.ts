@@ -1,10 +1,33 @@
-const BASE_URL = 'http://107.21.138.166:8000/';
+const BASE_URL = 'http://34.222.120.47:8000';
 
 export async function healthCheck() {
   const response = await fetch(`${BASE_URL}/healthCheck`);
   const responseJson = await response.json();
   return responseJson;
 }
+
+export async function uploadImage(data: FormData) {
+  const response = await fetch(`${BASE_URL}/upload`, {
+    body: data,
+    method: 'POST',
+  });
+
+  const responseJson = await response.json();
+
+  return responseJson;
+}
+
+export async function genericPredictions(requestBody: any) {
+  const response = await fetch(`${BASE_URL}/genericPredictions`, {
+    body: requestBody,
+    method: 'POST',
+  });
+
+  const responseJson = await response.json();
+
+  return responseJson;
+}
+
 export async function realityCheck(imageUrl: string) {
   const response = await fetch(
     `${BASE_URL}/realityCheck?imageUrl=${imageUrl}`,
