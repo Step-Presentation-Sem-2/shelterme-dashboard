@@ -1,6 +1,9 @@
 import { useNavigate } from '@remix-run/react';
 import * as antIcons from '@ant-design/icons';
 import type { UploadFile, UploadProps } from 'antd';
+import { Button, Modal } from 'antd';
+import { Select, Space } from 'antd';
+
 import {
   message,
   Upload,
@@ -72,7 +75,11 @@ export default function Scan() {
       <div style={{ marginTop: 8 }}>Upload</div>
     </button>
   );
-
+  const [open, setOpen] = useState(false);
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
+  
   return (
     <WithNavigation>
       <Form form={form}>
@@ -117,6 +124,44 @@ export default function Scan() {
           </>
         )}
       </Form>
+      <>
+      <Button type="primary" onClick={() => setOpen(true)}>
+        Know more about the image
+      </Button>
+      <Modal
+        title="Do you want to know more about the image you uploaded?"
+        centered
+        open={open}
+        onOk={() => setOpen(false)}
+        onCancel={() => setOpen(false)}
+        width={1000}
+        > 
+        <p>Here are some questions you can ask:</p>
+        <p>1. What is the gender?</p>
+        <p>2. What is the color of the eye?</p>
+        <p>3. What is the ethnicity?</p>
+        <p>4. What is the age? </p>
+        <p>5. Have wrinkles or not? </p>
+
+        <p>Please select the question you want to know.</p>
+        <Space wrap>
+    <Select
+      defaultValue="select"
+      style={{ width: 120 }}
+      onChange={handleChange}
+      options={[
+        { value: 'Q1', label: 'Question 1' },
+        { value: 'Q2', label: 'Question 2' },
+        { value: 'Q3', label: 'Question 3' },
+        { value: 'Q4', label: 'Question 4' },
+        { value: 'Q5', label: 'Question 5' },
+      ]}
+    />
+      </Space>
+      </Modal>
+    </>
     </WithNavigation>
   );
+  
 }
+
