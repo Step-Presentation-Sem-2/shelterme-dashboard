@@ -17,6 +17,17 @@ export async function uploadImage(data: FormData) {
   return responseJson;
 }
 
+export async function genericPredictions(requestBody: any) {
+  const response = await fetch(`${BASE_URL}/genericPredictions`, {
+    body: requestBody,
+    method: 'POST',
+  });
+
+  const responseJson = await response.json();
+
+  return responseJson;
+}
+
 export async function realityCheck(imageUrl: string) {
   const response = await fetch(
     `${BASE_URL}/realityCheck?imageUrl=${imageUrl}`,
