@@ -94,21 +94,9 @@ export default function Scan() {
             </Form.Item>
           ) : (
             <>
-              <Form.Item label='Model' name='model'>
-                <Radio.Group value='resnet-50'>
-                  <Radio.Button value='resnet-50'>Resnet 50</Radio.Button>
-                  <Radio.Button value='resnet-101'>Resnet 101</Radio.Button>
-                  <Radio.Button value='resnet-152'>Resnet 152</Radio.Button>
-                  <Radio.Button value='vgg-16'>VGG 16</Radio.Button>
-                  <Radio.Button value='vgg-19'>VGG 19</Radio.Button>
-                </Radio.Group>
-              </Form.Item>
-
               <Form.Item label='Activation function' name='activation-function'>
-                <Radio.Group value='resnet-50'>
-                  <Radio.Button value='relu'>Relu</Radio.Button>
+                <Radio.Group value='softmax'>
                   <Radio.Button value='softmax'>Soft-max</Radio.Button>
-                  <Radio.Button value='sigmoid'>Sigmoid</Radio.Button>
                   <Radio.Button value='tanh'>Tanh</Radio.Button>
                 </Radio.Group>
               </Form.Item>
