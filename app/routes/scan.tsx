@@ -107,7 +107,24 @@ export default function Scan() {
             </>
           )}
         </Form>
+        <Button type="primary" ghost>
+        What is my age?
+        </Button>
+        <Button type="primary" ghost>
+        What is my gender?
+        </Button>
+        <Button type="primary" ghost>
+        What is my ethnicity?
+        </Button>
+        <Button type="primary" ghost>
+        What is my hair color?
+        </Button>
+        <Button type="primary" ghost>
+        Do I have wrinkles?
+        </Button>
+    
       </Flex>
+      
     </WithNavigation>
   );
 }
