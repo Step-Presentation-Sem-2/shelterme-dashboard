@@ -21,7 +21,7 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
     <>
       <Menu onClick={onClick} selectedKeys={[current]} mode='horizontal'>
         <Menu.ItemGroup style={{ display: 'flex', alignItems: 'center' }}>
-          <Menu.Item key='brand'>
+          <Menu.Item key='/'>
             <span style={{ display: 'flex', alignItems: 'center' }}>
               <img
                 className='ant-menu-item'
@@ -36,22 +36,22 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
         </Menu.ItemGroup>
 
         <Menu.ItemGroup style={{ marginLeft: 'auto' }}>
-          <Menu.Item key='home'>
+          <Menu.Item key='/'>
             <HomeOutlined />
             Home
           </Menu.Item>
 
-          <Menu.Item key='about'>
+          <Menu.Item key='/about'>
             <QuestionCircleOutlined />
             About
           </Menu.Item>
 
-          <Menu.Item key='contact'>
+          <Menu.Item key='/contact'>
             <ContactsOutlined />
             Contact
           </Menu.Item>
 
-          <Menu.Item key='team'>
+          <Menu.Item key='/team'>
             <UserOutlined />
             Team
           </Menu.Item>
