@@ -13,9 +13,8 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
   const [currentRoute, setCurrentRoute] = useState('/');
 
   const onClick: MenuProps['onClick'] = (e) => {
-    console.log(e.key);
-    setCurrentRoute(e.key);
     navigate(e.key, { relative: 'route' });
+    setCurrentRoute(e.key);
   };
 
   return (
@@ -23,7 +22,7 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
       <Menu onClick={onClick} selectedKeys={[currentRoute]} mode='horizontal'>
         <Menu.ItemGroup style={{ display: 'flex', alignItems: 'center' }}>
           <Menu.Item key='/'>
-            <span style={{ display: 'flex', alignItems: 'center' }}>
+            <Space>
               <img
                 className='ant-menu-item'
                 src={logo}
@@ -32,7 +31,7 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
                 height={75}
               />
               Authentiscan
-            </span>
+            </Space>
           </Menu.Item>
         </Menu.ItemGroup>
 
