@@ -5,8 +5,13 @@ import { Menu, Space } from 'antd';
 import * as antIcons from '@ant-design/icons';
 import logo from '../images/logo.svg';
 
-const { HomeOutlined, QuestionCircleOutlined, ContactsOutlined, UserOutlined } =
-  antIcons;
+const {
+  HomeOutlined,
+  QuestionCircleOutlined,
+  ContactsOutlined,
+  UserOutlined,
+  CommentOutlined,
+} = antIcons;
 
 export function WithNavigation({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
@@ -61,6 +66,12 @@ export function WithNavigation({ children }: { children: React.ReactNode }) {
             <Space>
               <UserOutlined />
               Team
+            </Space>
+          </Menu.Item>
+          <Menu.Item key='/faq'>
+            <Space>
+              <CommentOutlined />
+              FAQ
             </Space>
           </Menu.Item>
         </Menu.ItemGroup>
