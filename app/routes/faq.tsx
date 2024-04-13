@@ -1,22 +1,7 @@
-import { Avatar } from 'antd';
-import {
-  Breadcrumb,
-  Layout,
-  Menu,
-  theme,
-  Divider,
-  Space,
-  Flex,
-  Col,
-  Row,
-  Collapse,
-} from 'antd';
-import { Typography } from 'antd';
+import { Space, Collapse, Typography } from 'antd';
 
 import { WithNavigation } from '../components/WithNavigation';
-const { Title, Paragraph, Text } = Typography;
-
-const { Header, Content, Footer } = Layout;
+const { Title } = Typography;
 
 export default function Team() {
   return (
