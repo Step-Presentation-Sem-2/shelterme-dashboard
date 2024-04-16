@@ -18,11 +18,11 @@ export default function Team() {
     },
     {
       name: 'Aman',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/aman.png',
     },
     {
       name: 'Hassaan',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/hassan.png',
     },
     {
       name: 'Mathew',
@@ -30,7 +30,7 @@ export default function Team() {
     },
     {
       name: 'Baldeep',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/baldeep.png',
     },
     {
       name: 'Abhishek',
@@ -38,7 +38,7 @@ export default function Team() {
     },
     {
       name: 'Sneha',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/sneha.png',
     },
     {
       name: 'Rithwik',
@@ -46,11 +46,11 @@ export default function Team() {
     },
     {
       name: 'Jini',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/jini.png',
     },
     {
       name: 'Obitha',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/obitha.png',
     },
     {
       name: 'Rajesh',
@@ -58,11 +58,11 @@ export default function Team() {
     },
     {
       name: 'Sweatha',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/sweatha.png',
     },
     {
       name: 'Arshia',
-      imageUri: 'app/images/placeholder.jpeg',
+      imageUri: 'app/images/arshia.png',
     },
     {
       name: 'Govind',
@@ -87,7 +87,7 @@ export default function Team() {
   return (
     <WithNavigation>
       <Title level={2} style={{ marginBottom: '20px', textAlign: 'center' }}>
-        <Space align='center'>Teams</Space>
+        <Space align='center'>Team</Space>
       </Title>
       <Row gutter={[16, 16]}>
         {teamMembers.map((member, index) => {

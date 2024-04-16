@@ -1,5 +1,5 @@
 import { WithNavigation } from '../components/WithNavigation';
-import { Typography, Space, Divider, Row, Col } from 'antd';
+import { Typography, Space, Divider, Row, Col, Collapse} from 'antd';
 
 const { Title, Paragraph } = Typography;
 

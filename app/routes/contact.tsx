@@ -1,72 +1,71 @@
 import { WithNavigation } from '../components/WithNavigation';
-import { Button, Card, Flex, Typography } from 'antd';
-import { Carousel } from 'antd';
+import { Button, Card, Flex, Typography, Form, Input, Select, Space, Image, Row, Col} from 'antd';
 
-const cardStyle: React.CSSProperties = {
-  width: 1200,
-  height: 400,
-  margin: "auto",
+const { Title, Paragraph } = Typography;
+
+type SizeType = Parameters<typeof Form>[0]['size'];
+
+const validateMessages = {
+  required: '${label} is required!',
+  types: {
+    email: '${label} is not a valid email!',
+  },
 };
 
-const imgStyle: React.CSSProperties = {
-  display: 'block',
-  width: 400,
-  height: 400,
-  
+const layout = {
+  labelCol: { span: 8 },
+  wrapperCol: { span: 16 },
 };
-const contentStyle: React.CSSProperties = {
-  height: '700px',
-  color: '#000',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#A9A9A9',
-};
-
 
 export default function About() {
   return <WithNavigation>
-    <h1>Contact us</h1>
-    <Carousel autoplay>
-    <div>
-    <div style={contentStyle}>
-      <h2>Get in Touch with Authentiscan</h2>
-      <Card hoverable style={cardStyle} styles={{ body: { padding: 0, overflow: 'hidden' } }}>
-      <Flex justify="space-between">
-      <img
-        alt="avatar"
-        src="app\images\humanoid.svg"
-        style={imgStyle}
-      />
-      <Flex vertical align="flex-end" justify="space-between" style={{ padding: 32 }}>
-        <Typography.Title level={3}>
-          “Authetiscan is an enterprise-class fake image detector”
-        </Typography.Title>
-        <Button type="primary" href="/scan" target="_blank">
-          Get Started
-        </Button>
-      </Flex>
-      </Flex>
-      </Card>
-      <p>Thank you for your interest in HeadshotGuardian. We value your feedback, inquiries, and suggestions. Whether you have questions about our services, need assistance with using our platform, or want to explore partnership opportunities, our team is here to assist you.</p>
-    </div>
-    </div>
-    
-    
-    <div>
-    <div style={contentStyle}>
-      <h2>Contact Information:</h2>
-      <span>
-      <h3>Email:</h3>
-      <h3>Phone:</h3>
-      <h3>Address:</h3>
-      </span>
-    </div>
-    </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    
-  </Carousel>
-    
+      <Row gutter={24} align= 'bottom' justify='end'>
+        <Col span={10}>
+          <div style={{ width: '100%', display: 'flex', alignContent: 'center' }}>
+            <img
+              width={'100%'}
+              height={'30%'}
+              src="/app/images/paper_plane.png"
+              alt="Description of the image"
+              style={{ 
+              }}
+            />
+          </div>
+        </Col>
+
+        <Col span={12} style={{ display: 'flex', alignItems: 'center', alignContent: 'center'}}>
+        <Form
+           {...layout}
+           size={'large'}
+            name="contact_us"
+            labelCol={{ flex: '110px', style: { opacity: 0.5 } }} 
+             wrapperCol={{ flex: 1 }}
+             style={{ margin: '8rem auto 0', width: '400px' }}
+             labelAlign="left" // Align labels inside input boxess
+             validateMessages={validateMessages}
+             
+          >
+            <Form.Item style={{display: 'flex', justifyContent: 'center'}}>
+              <Title>Contact Us</Title>
+            </Form.Item>
+            <Form.Item name={['name']} rules={[{ required: true }]}>
+              <Input placeholder="Name" />
+            </Form.Item>
+          <Form.Item name={['email']} rules={[{ required: true, type: 'email' }]}>
+            <Input placeholder="Email ID" />
+          </Form.Item>
+
+          <Form.Item name={['user', 'message']}  rules={[{ required: true}]}>
+            <Input.TextArea placeholder='Message'/>
+          </Form.Item>
+          <Form.Item style={{display: 'flex', justifyContent: 'center'}}>
+            <Button type="default" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+  </Form>
+        </Col>      
+      </Row>
+
   </WithNavigation>;
 }
