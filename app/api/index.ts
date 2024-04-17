@@ -1,3 +1,5 @@
+import { VLMQuestions } from '~/routes/scan';
+
 const BASE_URL = 'http://34.222.120.47:8000';
 
 export async function healthCheck() {
@@ -17,9 +19,11 @@ export async function uploadImage(data: FormData) {
   return responseJson;
 }
 
-export async function genericPredictions(requestBody: any) {
+export async function genericPredictions(requestBody: {
+  question: VLMQuestions;
+}) {
   const response = await fetch(`${BASE_URL}/genericPredictions`, {
-    body: requestBody,
+    body: JSON.stringify(requestBody),
     method: 'POST',
   });
 
