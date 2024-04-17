@@ -86,7 +86,7 @@ export default function Team() {
 
   return (
     <WithNavigation>
-      <Title level={2} style={{ marginBottom: '20px', textAlign: 'center' }}>
+      <Title code level={2} style={{ marginBottom: '20px', textAlign: 'center' }}>
         <Space align='center'>Team</Space>
       </Title>
       <Row gutter={[16, 16]}>

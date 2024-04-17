@@ -7,7 +7,7 @@ export default function Team() {
   return (
     <WithNavigation>
       <Typography>
-        <Title level={2} style={{ marginBottom: '20px', textAlign: 'center' }}>
+        <Title code level={2} style={{ marginBottom: '20px', textAlign: 'center' }}>
           <Space align='center'>Frequently Asked Questions and Answers</Space>
         </Title>
 
