@@ -46,7 +46,7 @@ export default function About() {
              
           >
             <Form.Item style={{display: 'flex', justifyContent: 'center'}}>
-              <Title>Contact Us</Title>
+              <Title code>Contact Us</Title>
             </Form.Item>
             <Form.Item name={['name']} rules={[{ required: true }]}>
               <Input placeholder="Name" />
