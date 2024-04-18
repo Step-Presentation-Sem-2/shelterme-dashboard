@@ -1,6 +1,6 @@
 import { VLMQuestions } from '~/routes/scan';
 
-const BASE_URL = 'http://34.222.120.47:8000';
+const BASE_URL = 'http://35.91.48.148:8000';
 
 export async function healthCheck() {
   const response = await fetch(`${BASE_URL}/healthCheck`);
