@@ -19,13 +19,13 @@ export async function uploadImage(data: FormData) {
   return responseJson;
 }
 
-export async function genericPredictions(requestBody: {
-  question: VLMQuestions;
-}) {
-  const response = await fetch(`${BASE_URL}/genericPredictions`, {
-    body: JSON.stringify(requestBody),
-    method: 'POST',
-  });
+export async function genericPredictions(question: VLMQuestions) {
+  const response = await fetch(
+    `${BASE_URL}/genericPredictions?question=${question}`,
+    {
+      method: 'POST',
+    }
+  );
 
   const responseJson = await response.json();
 
