@@ -146,6 +146,12 @@ export default function Scan() {
       return;
     }
 
+    const modelProbability = () => {
+      if (response.status === ResponseStatus.Success) {
+        return Math.round((response?.data?.probability * 100) / 100).toFixed(2);
+      }
+    };
+
     const resultMap: Record<
       ResponseStatus,
       {
@@ -157,7 +163,7 @@ export default function Scan() {
       [ResponseStatus.Success]: {
         status: 'success',
         title: 'This is likely a real image',
-        message: `Our model predicts that this is a real image with probability ${response.data?.probability}`,
+        message: `Our model predicts that this is a real image with probability ${modelProbability()}`,
       },
       [ResponseStatus.Failure]: {
         status: 'error',
@@ -175,7 +181,7 @@ export default function Scan() {
       <Result
         status={resultMap[response.status].status}
         title={resultMap[response.status].title}
-        subTitle={resultMap[response.status].message}
+        subTitle={<Text>{resultMap[response.status].message}</Text>}
       />
     );
   };
@@ -242,76 +248,69 @@ export default function Scan() {
                   paddingLeft: '4rem',
                 }}
               >
-                <>
-                  {isUploading ? (
-                    <>
-                      <Spin />
-                      <Text>Classifying image...</Text>
-                    </>
-                  ) : (
-                    <>
-                      <Form.Item>{renderResult()}</Form.Item>
+                {isUploading ? (
+                  <>
+                    <Spin />
+                    <Text>Classifying image...</Text>
+                  </>
+                ) : (
+                  <>
+                    <Form.Item>{renderResult()}</Form.Item>
 
-                      {response?.status === ResponseStatus.Success && (
-                        <>
-                          <Form.Item label='More about the image'>
-                            <Button
-                              disabled={isVLMRequestInProgress}
-                              onClick={() =>
-                                genericPredictionsRequest(VLMQuestions.Age)
-                              }
-                            >
-                              Age
-                            </Button>
-                            <Button
-                              disabled={isVLMRequestInProgress}
-                              onClick={() =>
-                                genericPredictionsRequest(VLMQuestions.Gender)
-                              }
-                            >
-                              Gender
-                            </Button>
-                            <Button
-                              disabled={isVLMRequestInProgress}
-                              onClick={() =>
-                                genericPredictionsRequest(
-                                  VLMQuestions.Ethnicity
-                                )
-                              }
-                            >
-                              Ethnicity
-                            </Button>
-                            <Button
-                              disabled={isVLMRequestInProgress}
-                              onClick={() =>
-                                genericPredictionsRequest(VLMQuestions.Eyecolor)
-                              }
-                            >
-                              Eyecolor
-                            </Button>
-                            <Button
-                              disabled={isVLMRequestInProgress}
-                              onClick={() =>
-                                genericPredictionsRequest(VLMQuestions.Wrinkles)
-                              }
-                            >
-                              Wrinkles
-                            </Button>
-                          </Form.Item>
-                          <Form.Item label='Our model predicts that:'>
-                            <Title level={5}>{vlmResponse}</Title>
-                          </Form.Item>
-                        </>
-                      )}
-
-                      <Form.Item>
-                        <Button onClick={onResetForm}>
-                          Try another image?
-                        </Button>
-                      </Form.Item>
-                    </>
-                  )}
-                </>
+                    {response?.status === ResponseStatus.Success && (
+                      <>
+                        <Form.Item label='More about the image'>
+                          <Button
+                            disabled={isVLMRequestInProgress}
+                            onClick={() =>
+                              genericPredictionsRequest(VLMQuestions.Age)
+                            }
+                          >
+                            Age
+                          </Button>
+                          <Button
+                            disabled={isVLMRequestInProgress}
+                            onClick={() =>
+                              genericPredictionsRequest(VLMQuestions.Gender)
+                            }
+                          >
+                            Gender
+                          </Button>
+                          <Button
+                            disabled={isVLMRequestInProgress}
+                            onClick={() =>
+                              genericPredictionsRequest(VLMQuestions.Ethnicity)
+                            }
+                          >
+                            Ethnicity
+                          </Button>
+                          <Button
+                            disabled={isVLMRequestInProgress}
+                            onClick={() =>
+                              genericPredictionsRequest(VLMQuestions.Eyecolor)
+                            }
+                          >
+                            Eyecolor
+                          </Button>
+                          <Button
+                            disabled={isVLMRequestInProgress}
+                            onClick={() =>
+                              genericPredictionsRequest(VLMQuestions.Wrinkles)
+                            }
+                          >
+                            Wrinkles
+                          </Button>
+                        </Form.Item>
+                        <Form.Item label='Our model predicts that:'>
+                          <Title level={5}>{vlmResponse}</Title>
+                        </Form.Item>
+                      </>
+                    )}
+                    <Form.Item>
+                      <Button onClick={onResetForm}>Try another image?</Button>
+                    </Form.Item>
+                  </>
+                )}
               </Col>
             </Row>
           )}
