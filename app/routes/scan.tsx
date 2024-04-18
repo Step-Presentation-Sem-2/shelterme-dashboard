@@ -129,7 +129,7 @@ export default function Scan() {
   const genericPredictionsRequest = async (question: VLMQuestions) => {
     setIsVLMRequestInProgress(true);
     const response = await genericPredictions(question);
-    setVlmResponse(response);
+    setVlmResponse(response.message);
     setIsVLMRequestInProgress(false);
   };
 
