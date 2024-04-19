@@ -45,6 +45,7 @@ export default function Index() {
           style={{
             display: 'flex',
             justifyContent: 'center',
+            marginTop: '64px',
           }}
         >
           <Image src={humanoid} width={400} preview={false} />
